@@ -1,7 +1,7 @@
 {
-  "name": "html5_boilerplate",
+  "name": "mqtt-client-interface",
   "version": "2.0.0",
-  "description": "",
+  "description": "Developers: Anthony, Hamza, Matt, Phong, and Sang",
   "main": "./src/index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -11,8 +11,8 @@
     "node": ">=8.0.0"
   },
   "keywords": [],
-  "author": "Dugnist Alexey",
-  "license": "ISC",
+  "author": "hamza khokhar",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
