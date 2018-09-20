@@ -7,6 +7,9 @@
     "build": "webpack --mode production",
     "dev": "webpack --mode development --watch"
   },
+  "engines": {
+    "node": ">=8.0.0"
+  },
   "keywords": [],
   "author": "Dugnist Alexey",
   "license": "ISC",
