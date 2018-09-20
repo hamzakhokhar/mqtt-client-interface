@@ -4,7 +4,7 @@
   "description": "",
   "main": "./src/index.js",
   "scripts": {
-    "build": "rm -rf build && cross-env NODE_ENV=production webpack --progress --hide-modules",
+    "build": "webpack --mode production",
     "dev": "webpack --mode development --watch"
   },
   "keywords": [],
