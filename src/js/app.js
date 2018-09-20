@@ -1,9 +1,7 @@
-const AwsIotSDK = require('aws-iot-device-sdk');
+const imports = require('./imports');
 const AuthService = require('./auth.service');
-const Config = require('./config');
-require('../css/app.css');
-
 const MqttService = require('./mqtt.service');
+
 let sdk = new MqttService();
 
 

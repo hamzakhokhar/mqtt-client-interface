@@ -78,7 +78,8 @@ const CONFIG = {
         console: false,
         fs: 'empty',
         net: 'empty',
-        tls: 'empty'
+        tls: 'empty',
+        path: empty
     },
     devServer: {
       contentBase: path.join(__dirname, "src"),
