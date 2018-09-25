@@ -17,8 +17,15 @@
          <a class="navbar-brand" href="#">Dashboard Hamza</a>
       </nav>
       <main class="container p-3">
+         <div class="dropdown">
+            <button onclick="myFunction()" class="dropbtn">List of Devices</button>
+            <div id="myDropdown" class="dropdown-content">
+               <a href="#">Link 1</a>
+               <a href="javascript:void(0)">Link 2</a>
+               <a href="javascript:void(0)">Link 3</a>
+            </div>
+         </div>
          <!--TODO: Add a button to subscribe to a specific deviceId -->
-         <!--TODO: Render a list of devices -->
          <div class="card">
             <div class="card-header">
                Featured
@@ -32,4 +39,27 @@
       </main>
     <script type="text/javascript" src="../dist/app.js"></script>
    </body>
+
+   <script>
+       /* When the user clicks on the button,
+       toggle between hiding and showing the dropdown content */
+       function myFunction() {
+           document.getElementById("myDropdown").classList.toggle("show");
+       }
+
+       // Close the dropdown if the user clicks outside of it
+       window.onclick = function(event) {
+           if (!event.target.matches('.dropbtn')) {
+
+               var dropdowns = document.getElementsByClassName("dropdown-content");
+               var i;
+               for (i = 0; i < dropdowns.length; i++) {
+                   var openDropdown = dropdowns[i];
+                   if (openDropdown.classList.contains('show')) {
+                       openDropdown.classList.remove('show');
+                   }
+               }
+           }
+       }
+   </script>
 </html>
