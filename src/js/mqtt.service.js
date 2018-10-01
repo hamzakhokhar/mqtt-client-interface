@@ -15,8 +15,7 @@ class Service {
             if (this.onConnect && typeof this.onConnect === 'function'){
                 this.onConnect(connectEvent);
             }
-
-        })
+        });
     }
 
     get config() {
