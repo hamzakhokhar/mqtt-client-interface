@@ -20,104 +20,19 @@
          <a class="navbar-brand" href="#">Dashboard</a>
       </nav>
       <main class="container p-3">
-         <div class="dropdown">
-            <button onclick="myFunction()" class="dropbtn">List of Devices</button>
-            <div id="myDropdown" class="dropdown-content">
-               <a href="#">Link 1</a>
-               <a href="javascript:void(0)">Link 2</a>
-               <a href="javascript:void(0)">Link 3</a>
+         <form class="form-inline">
+            <div class="form-group mb-2">
+               <label for="deviceType" class="sr-only">DeviceType</label>
+               <input type="text" class="form-control " id="deviceType" placeholder="Bulb">
             </div>
-         </div>
-         <!--TODO: Add a button to subscribe to a specific deviceId -->
-         <div class="card">
-            <div class="card-header">
-               Featured
+            <div class="form-group mb-2">
+               <label for="physicalId" class="sr-only">PhysicalId</label>
+               <input type="text" class="form-control" id="physicalId" placeholder="00001">
             </div>
-            <div class="card-body">
-               <h3 class="card-title" style="padding-left: 35%">Add a device to see it's activity</h3>
-               <button id="myBtn" style="display: block; margin: 0 auto">Add a Device</button>
-
-            <!-- POP UP BOX -->
-               <div id="myModal" class="modal">
-                  <!-- Modal content -->
-                  <div class="modal-content">
-                     <span class="close">&times;</span>
-                     <form action="/action_page.php">
-                        Device Function: <input type="text" name="deviceFunc" style="margin: 5px auto;"><br>
-                        Device ID: <input type="text" name="deviceId"><br>
-                     </form>
-                     <button id = "modalBtn" style="margin: 5px auto; display: block" >Add</button>
-                  </div>
-                  <link rel="stylesheet" href="css/modal.css">
-               </div>
-
-            <!-- END POP UP BOX -->
-            </div>
-         </div>
-         <!-- MAKING CARDS -->
-         <div class="container" style="padding-left: 10%; padding-right: 10%; padding-top: 5%">
-            <div class="panel panel-default">
-               <div class = "panel-heading" style="background-color: greenyellow">Current Temperature: </div>
-               <div class="panel-body" style="background-color: lightcoral">High: </div>
-               <div class="panel-footer"style="background-color: lightblue">Low: </div>
-            </div>
-         </div>
-         <!-- END MAKING CARDS -->
-
+            <button id="addButton" class="btn btn-primary mb-2">Add Device</button>
+         </form>
       </main>
+      <main id="devices" class="container p-3"></main>
     <script type="text/javascript" src="../dist/app.js"></script>
    </body>
-
-   <script>
-       /* When the user clicks on the button,
-       toggle between hiding and showing the dropdown content */
-       function myFunction() {
-           document.getElementById("myDropdown").classList.toggle("show");
-       }
-
-       // Close the dropdown if the user clicks outside of it
-       window.onclick = function(event) {
-           if (!event.target.matches('.dropbtn')) {
-
-               var dropdowns = document.getElementsByClassName("dropdown-content");
-               var i;
-               for (i = 0; i < dropdowns.length; i++) {
-                   var openDropdown = dropdowns[i];
-                   if (openDropdown.classList.contains('show')) {
-                       openDropdown.classList.remove('show');
-                   }
-               }
-           }
-       }
-
-       /*
-       SCRIPTS FOR THE POP UP BOX
-        */
-       // Get the modal
-       var modal = document.getElementById('myModal');
-
-       // Get the button that opens the modal
-       var btn = document.getElementById("myBtn");
-
-       // Get the <span> element that closes the modal
-       var span = document.getElementsByClassName("close")[0];
-
-       // When the user clicks the button, open the modal
-       btn.onclick = function() {
-           modal.style.display = "block";
-       }
-
-       // When the user clicks on <span> (x), close the modal
-       span.onclick = function() {
-           modal.style.display = "none";
-       }
-
-       // When the user clicks anywhere outside of the modal, close it
-       window.onclick = function(event) {
-           if (event.target == modal) {
-               modal.style.display = "none";
-           }
-       }
-
-   </script>
 </html>
