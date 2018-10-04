@@ -2,7 +2,16 @@ const imports = require('./imports');
 const AuthService = require('./auth.service');
 const MqttService = require('./mqtt.service');
 
+const BulbComponent = require('./components/bulb.component');
+
 let sdk = new MqttService();
+
+// let ComponenetManager = new ComponenetManager();
+// ComponenetManager.add(new BulbComponent());
+//
+// ComponenetManager.update();
+
+let bulbComponent = new BulbComponent('devicesComponent');
 
 
 AuthService.getCredentials()
