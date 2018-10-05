@@ -20,7 +20,6 @@ $('#addButton').click(() => {
 
 AuthService.getCredentials()
     .then((data) => {
-        console.log(data);
        sdk.credentials = data.Credentials;
        sdk.connect();
     });
