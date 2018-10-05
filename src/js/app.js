@@ -27,19 +27,19 @@ AuthService.getCredentials()
 
 sdk.onConnect = (connectEvent) => {
 
-
     componentManager.onComponentAdd = (id) => {
         console.log('componentAdded', id)
         //TODO: Subscribe to topics to recieve messages
     };
 
     componentManager.onComponentRemove = (id) => {
-        console.log('componentRemoved');
+        console.log('componentRemoved', id);
         //TODO: UnSubscribe to topics
     };
 
     componentManager.onComponentStateChange = (id, state) => {
       //TODO: send message with new state
+        console.log("state changed");
         // example sdk.client.publish(`devices/${id}`, JSON.stringify(state));
         // example sdk.client.updateShadow(`${id}`, state...) state needs to be a shadow state not your component state
     };
