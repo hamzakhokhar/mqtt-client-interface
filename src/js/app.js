@@ -10,7 +10,7 @@ const ComponentManager = require('./component.manager');
 let sdk = new MqttService();
 let componentManager = new ComponentManager();
 
-$('#addButton').click(() => {
+$('#addDeviceBtn').click(() => {
     let deviceType = $('#deviceType').val();
     let physicalId = $('#physicalId').val();
     componentManager.addByType(deviceType, physicalId);
