@@ -79,7 +79,8 @@ const CONFIG = {
         fs: 'empty',
         net: 'empty',
         tls: 'empty',
-        path: 'empty'
+        path: 'empty',
+        child_process: 'empty'
     },
     devServer: {
       contentBase: path.join(__dirname, "src"),
