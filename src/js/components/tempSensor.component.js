@@ -7,11 +7,14 @@ const Component = require('./component');
 
 class TempSensorComponent extends Component {
     constructor(rootElement, model){
-        super(rootElement, model)
+        super(rootElement, model);
+        this.model.onStateUpdate = ()=>{
+            this.render();
+        }
     }
     //
     get template(){
-        return `<div class="card" id="{{deviceType}}_{{physicalId}}">
+        return `<div class="card" id="{{id}}">
             <div class="card-header">
                <div>
                 DeviceType: {{deviceType}}
@@ -19,9 +22,13 @@ class TempSensorComponent extends Component {
                <div>
                  PhysicalId: {{physicalId}}
                </div>
+               <div>
+                 deviceId: {{id}}
+               </div>
             </div>
             <div class="card-body">
-                <input type="checkbox">
+                <h1>Temperature: {{state.reported.temperature}}°C</h1>
+                <h1>Humidity: {{state.reported.humidity}}%</h1>
             </div>
             <div class="card-footer">
                 <button type="button" class="btn btn-danger float-right" id="123Remove">Remove</button>

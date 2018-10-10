@@ -38,7 +38,8 @@
     "lodash": "^4.17.11",
     "jquery": "^3.3.1",
     "mustache": "^3.0.0",
-    "aws-iot-device-sdk": "^2.2.1"
+    "aws-iot-device-sdk": "^2.2.1",
+    "uuid-1345": "^0.99.7"
   },
   "browser": {
     "fs": false

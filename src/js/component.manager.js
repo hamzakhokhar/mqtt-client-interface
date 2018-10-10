@@ -2,6 +2,7 @@
 const _ = require('lodash');
 
 const Components = require('./components');
+const Models = require('./models');
 
 class Manager {
     constructor() {
@@ -9,26 +10,25 @@ class Manager {
     }
 
     add(component) {
-        let id = `${component.model.deviceType}_${component.model.physicalId}`;
-        this.components[id] = component;
+        this.components[component.model.id] = component;
         if(this.onComponentAdd && typeof this.onComponentAdd === 'function'){
-            this.onComponentAdd(id);
+            this.onComponentAdd(component);
         }
     }
 
     remove(component) {
-        let id = `${component.model.deviceType}_${component.model.physicalId}`;
-        delete this.components[id];
         if(this.onComponentRemove && typeof this.onComponentRemove === 'function'){
-            this.onComponentRemove(id);
+            this.onComponentRemove(component.model.id);
         }
+        delete this.components[component.model.id];
     }
 
-    addByType(deviceType, physicalId){
-        let Component = Components[deviceType];
-        let _component = new Component('devices', {deviceType, physicalId});
+    addByType(type, physicalId){
+        let model = new Models[type](type, physicalId);
+        let Component = Components[model.deviceType];
+        let _component = new Component('devices', model);
 
-        _component.onComponentRemove = (id) =>{
+        _component.onComponentRemove = () =>{
             this.remove(_component)
         };
 
@@ -46,8 +46,6 @@ class Manager {
             component.render();
         });
     }
-
-    //TODO: Add update componnent function
 
     onComponentRemove(){};
     onComponentAdd(){};
