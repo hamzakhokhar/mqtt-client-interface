@@ -22,16 +22,26 @@ class TempSensorModel {
         })
     }
 
-    updateState(state){
-        this._state = state;
-        if(this.onStateUpdate && typeof this.onStateUpdate === 'function'){
-            this.onStateUpdate()
+    updateReportedState(reportedState){
+        this._state.reported = reportedState;
+        if(this.onStateReportedChange && typeof this.onStateReportedChange === 'function'){
+            this.onStateReportedChange(reportedState)
+        }
+    }
+
+    updateDesiredState(desiredState){
+        this._state.desired = desiredState;
+        if(this.onStateDesiredChange && typeof this.onStateDesiredChange === 'function'){
+            this.onStateDesiredChange(desiredState)
         }
     }
 
     get state(){
         return this._state;
     }
+
+    onStateReportedChange(){}
+    onStateDesiredChange(){}
 }
 
 module.exports = TempSensorModel;
