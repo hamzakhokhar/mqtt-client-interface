@@ -9,6 +9,10 @@ class TempSensorModel {
             reported : {},
             desired: {}
         }
+        this.timeseries = {
+            temperature: [],
+            humidity: []
+        }
     }
 
     toJSON(){}
@@ -27,6 +31,15 @@ class TempSensorModel {
         if(this.onStateReportedChange && typeof this.onStateReportedChange === 'function'){
             this.onStateReportedChange(reportedState)
         }
+
+        this.timeseries.temperature.push({
+            x: new Date(),
+            y: this._state.reported.temperature
+        })
+        this.timeseries.humidity.push({
+            x: new Date(),
+            y: this._state.reported.humidity
+        })
     }
 
     updateDesiredState(desiredState){
