@@ -40,8 +40,6 @@ class TempSensorComponent extends Component {
                 <h1>Humidity: {{state.reported.humidity}}%</h1>
                 <input id="sensorStateCheckBox" type="checkbox" name="Sensor State" value="" > Sensor Active
                 <canvas id="myChart" width="400" height="400"></canvas>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-            </div>
             <div class="card-footer">
                 <button type="button" class="btn btn-danger float-right" id="123Remove">Remove</button>
             </div>
@@ -129,11 +127,11 @@ class TempSensorComponent extends Component {
                                 fontColor: '#FF0000'
                             }
                         },
-                        time: {
-                            displayFormats: {
-                                quarter: 'MMM D'
-                            }
-                        },
+                        // time: {
+                        //     displayFormats: {
+                        //         quarter: 'MMM D'
+                        //     }
+                        // },
                         bounds: {
                             max: 50,
                             min: -50
