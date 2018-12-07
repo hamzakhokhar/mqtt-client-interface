@@ -116,6 +116,7 @@ class TempSensorComponent extends Component {
         });
     }
 
+    
     remove(){
         this.destroy();
     }
