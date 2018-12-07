@@ -76,14 +76,10 @@ class TempSensorComponent extends Component {
                     {
                         label: "temperature",
                         data: this.model.timeseries.temperature,
-                        backgroundColor: color(window.chartColors.red),
-                        borderColor: window.chartColors.red,
                         fill: true,
                     }, {
                         label: "humidity",
                         data: this.model.timeseries.humidity,
-                        backgroundColor:color(window.chartColors.blue),
-                        borderColor: window.chartColors.blue,
                         fill:true,
                     }
                 ]
