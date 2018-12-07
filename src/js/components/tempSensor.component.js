@@ -72,13 +72,17 @@ class TempSensorComponent extends Component {
             data: {
                 datasets:[
                     {
-                        label: "temperature",
+                        label: "Temperature",
                         data: this.model.timeseries.temperature,
-                        fill: true,
+                        fill: false,
+                        backgroundColor: "#FF0000",
+                        borderColor: "#FF0000",
                     }, {
-                        label: "humidity",
+                        label: "Humidity",
                         data: this.model.timeseries.humidity,
-                        fill:true,
+                        fill: false,
+                        backgroundColor: "#0000FF",
+                        borderColor: "#0000FF",
                     }
                 ]
 
@@ -91,24 +95,11 @@ class TempSensorComponent extends Component {
                         type: 'linear',
                         scaleLabel: {
                             display:true,
-                            labelString: 'value'
+                            labelString: 'Value'
                         },
                         ticks: {
-                            suggestedMax: 50,
-                            suggestedMin: -50,
-                            major: {
-                                fontStyle: 'bold',
-                                fontColor: '#0000FF'
-                            }
-                        },
-                        time: {
-                            displayFormats: {
-                                quarter: 'MMM D'
-                            }
-                        },
-                        bounds: {
-                            max: 50,
-                            min: -50
+                            suggestedMax: 35,
+                            suggestedMin: 0,
                         }
                     }],
                     xAxes: [{
@@ -118,23 +109,6 @@ class TempSensorComponent extends Component {
                         scaleLabel: {
                             display: true,
                             labelString: 'Date'
-                        },
-                        ticks: {
-                            suggestedMax: 50,
-                            suggestedMin: -50,
-                            major: {
-                                fontStyle: 'bold',
-                                fontColor: '#FF0000'
-                            }
-                        },
-                        // time: {
-                        //     displayFormats: {
-                        //         quarter: 'MMM D'
-                        //     }
-                        // },
-                        bounds: {
-                            max: 50,
-                            min: -50
                         }
                     }]
                 }
